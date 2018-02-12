@@ -62,6 +62,9 @@ module RailsAdmin
       # set parent controller
       attr_accessor :parent_controller
 
+      # protect_from_forgery
+      attr_accessor :protect_from_forgery
+
       # Stores model configuration objects in a hash identified by model's class
       # name.
       #
@@ -288,6 +291,7 @@ module RailsAdmin
         @navigation_static_links = {}
         @navigation_static_label = nil
         @parent_controller = '::ActionController::Base'
+        @protect_from_forgery = true
         RailsAdmin::Config::Actions.reset
       end
 
